@@ -1,1 +1,0 @@
-import { LayoutProps } from "@/interface";
