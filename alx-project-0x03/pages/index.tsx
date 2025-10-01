@@ -1,17 +1,19 @@
-import Button from "@/components/common/Button";
-import { useRouter } from "next/router";
-
-interface PageRouteProps {
-  pageRoute: string;
+// Interface pour les props du bouton
+export interface ButtonProps {
+  buttonLabel: string;
+  buttonSize?: string;
+  buttonBackgroundColor?: "red" | "blue" | "orange" | "green";
+  action?: () => void;
 }
 
-export default function Home() {
-  const router = useRouter();
+// Interface pour le Layout
+import { ReactNode } from "react";
 
-  // Imperative routing with useRouter
-  const routeToNextPage = ({ pageRoute }: PageRouteProps) => {
-    router.push(pageRoute, undefined, { shallow: false });
-  };
+export interface LayoutProps {
+  children: ReactNode;
+}
 
-  return (
-    <div className="
+// Interface pour la navigation de page (index.tsx)
+export interface PageRouteProps {
+  pageRoute: string;
+}
